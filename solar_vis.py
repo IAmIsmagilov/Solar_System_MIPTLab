@@ -61,7 +61,6 @@ def scale_y(y):
     return int(-y * scale_factor) + window_height // 2
 
 
-
 if __name__ == "__main__":
     print("This module is not for direct call!")
 
@@ -70,12 +69,11 @@ class Drawer:
     def __init__(self, screen):
         self.screen = screen
 
-
     def update(self, figures, ui):
         self.screen.fill((0, 0, 0))
         for figure in figures:
             figure.draw(self.screen)
-        
+
         ui.blit()
         ui.update()
         pg.display.update()
@@ -87,4 +85,5 @@ class DrawableObject:
 
     def draw(self, surface):
         object_ = self.obj
-        circle(surface, object_.color, (scale_x(object_.x), scale_y(object_.y)), object_.R)
+        circle(surface, object_.color, (scale_x(
+            object_.x), scale_y(object_.y)), object_.R)
